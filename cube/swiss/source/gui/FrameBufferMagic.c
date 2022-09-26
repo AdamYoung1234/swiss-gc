@@ -1357,7 +1357,7 @@ static void _DrawTitleBar(uiDrawObj_t *evt) {
 	
 	_DrawSimpleBox(19, 17, 602, 62, 0, fillColor, noColor);
 	
-	drawString(40, 28, "Swiss v0.6", 1.5f, false, defaultColor);
+	drawString(40, 28, "Swiss v0.6 mod", 1.3f, false, defaultColor);
 	sprintf(fbTextBuffer, "commit: %s rev: %s", GITREVISION, GITVERSION);
 	drawString(425, 50, fbTextBuffer, 0.55f, false, defaultColor);
 	

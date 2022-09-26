@@ -189,7 +189,7 @@
 
 #define	STATE_OFFSET 204
 #define MODE_OFFSET	 206
-	 
+
 #define FPR0_OFFSET	208
 #define FPR1_OFFSET 216
 #define FPR2_OFFSET 224
