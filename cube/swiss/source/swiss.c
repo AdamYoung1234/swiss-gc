@@ -1684,19 +1684,12 @@ void load_game() {
 		}
 		
 		swissSettings.audioStreaming = is_streaming_disc(&GCMDisk);
-		if(is_redump_disc(curFile.meta) && !valid_gcm_size(&GCMDisk, curFile.size)) {
-			if(swissSettings.audioStreaming) {
-				DrawDispose(msgBox);
-				msgBox = DrawPublish(DrawMessageBox(D_WARN, "File is a bad dump and is not playable.\nPlease attempt recovery using NKit."));
-				sleep(5);
-				DrawDispose(msgBox);
-				return;
-			}
-			else {
-				DrawDispose(msgBox);
-				msgBox = DrawPublish(DrawMessageBox(D_WARN, "File is a bad dump, but may be playable.\nPlease attempt recovery using NKit."));
-				sleep(5);
-			}
+		if(is_redump_disc(curFile.meta) && !valid_gcm_size(&GCMDisk, curFile.size) && swissSettings.audioStreaming) {
+			DrawDispose(msgBox);
+			msgBox = DrawPublish(DrawMessageBox(D_WARN, "File is a bad dump and is not playable.\nPlease attempt recovery using NKit."));
+			sleep(5);
+			DrawDispose(msgBox);
+			return;
 		}
 	}
 	
